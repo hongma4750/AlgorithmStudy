@@ -43,17 +43,23 @@ public class InvestmentInStocks {
 			int bestPrice = findBestPrice(price,0,price.size());		//주가가 제일 높을때를 찾는다.
 			
 			for(int i=0;i<price.size();i++){
-				if(price.get(i) != bestPrice ){							//찾는 주가 보다 낮으면 주식을 산다.
+				if(bestPrice == 0){
+					break;
+				}
+				if(i != bestPrice ){							//찾는 주가 보다 낮으면 주식을 산다.
 					
 					myStocks.add(price.get(i));
 					
-				}else if(price.get(i) == bestPrice && i != 0){			//제일 높은 주가를 찾았고 그 날이 첫날이 아니면 주가를 판다.
-					income += saleMyStock(myStocks,bestPrice);			//주가를 팔면서 나의 주식 정보가 담겨있는 ArrayList를 초기화 시킨다.
+				}else if(i == bestPrice && i != 0){			//제일 높은 주가를 찾았고 그 날이 첫날이 아니면 주가를 판다.
+					income += saleMyStock(myStocks,price.get(bestPrice));			//주가를 팔면서 나의 주식 정보가 담겨있는 ArrayList를 초기화 시킨다.
 					
 					bestPrice = findBestPrice(price, i+1, price.size());	//다음 주가가 제일 높은 날을 찾는다.
 		
-				}else if(price.get(i) == bestPrice && i==0){
+					
+				}else if(i == bestPrice && i==0){
 					bestPrice = findBestPrice(price,i+1,price.size());	//주가는 제일 높지만 첫날이기에 다음 주가가 제일 높은 날을 찾는다.
+				}else if(i == bestPrice && i==price.size()){
+					continue;
 				}
 			}
 
@@ -83,19 +89,26 @@ public class InvestmentInStocks {
 	static int findBestPrice(ArrayList<Integer> price, int first, int max){		//최고주가를 찾는 역활
 		
 		int bestPrice = 0;
+		int index = 0;
 		
 		if(first+1 == max){
 			bestPrice = 0;
-			
 		}else{
 			for(int i=first;i<max;i++){
 				if(bestPrice < price.get(i)){
 					bestPrice=price.get(i);
+					index = i;
 				}
 			}
 		}
 		
-		return bestPrice;
+		for(int i=first;i<max;i++){
+			if(index == first){
+				index = findBestPrice(price,first+1,max);
+			}
+		}
+		
+		return index;
 	}
 
 }
