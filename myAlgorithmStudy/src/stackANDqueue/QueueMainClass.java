@@ -23,7 +23,7 @@ public class QueueMainClass {
 		myQueue.printQueue();*/
 		
 		//배열로 구현한 원형 큐
-		int queueSize=4;
+		/*int queueSize=4;
 		ExArrayCicleQueue myQueue = new ExArrayCicleQueue(queueSize);
 		
 		myQueue.enQueue("A");
@@ -39,7 +39,24 @@ public class QueueMainClass {
 		myQueue.enQueue("C");
 		myQueue.enQueue("D");
 		myQueue.enQueue("E");
+		myQueue.printQueue();*/
+		
+		
+		ExLinkedQueue myQueue = new ExLinkedQueue();
+		myQueue.enQueue("A");
 		myQueue.printQueue();
+		System.out.println();
+		
+		myQueue.enQueue("B");
+		myQueue.enQueue("C");
+		myQueue.enQueue("D");
+		myQueue.enQueue("E");
+		myQueue.printQueue();
+		System.out.println();
+		
+		myQueue.deQueue();
+		myQueue.printQueue();
+		
 		
 	}
 
