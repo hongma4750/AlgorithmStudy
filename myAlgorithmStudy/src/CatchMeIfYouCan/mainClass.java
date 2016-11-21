@@ -7,8 +7,15 @@ public class mainClass {
 
 	public static void main(String[] args) {
 		// 질문 리스트 선택 프로그램
+		
 		// 개발자 : 김홍민
 		// 만든이유 : 상당히 귀찮아서 .... 스터디까지 시간이 남아서 재미삼아...
+		
+		
+		// 사용법 : 숫자 1을 input 값으로 넣어주삼
+		// 데이터 추가시 myArr 배열에 데이터 값 넣어주면 됨
+		
+		
 		// https://repl.it/languages
 		// 웹 코딩 사이트
 		
