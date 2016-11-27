@@ -24,7 +24,7 @@ public class mainClass {
 		
 		String[] myArr = {"클래스vs객체","객체지향특징","자바특징","c vs c++","절차vs객체","main메서드",
 							"스레드vs프로세스","배열vs연결리스트","tcp/udp","스택vs큐","call by value vs call by reference",
-							"스트림","메모리구조","컬렉션프레임워크"};
+							"스트림","메모리구조","컬렉션프레임워크","트랜잭션","트리vs해쉬","스프링(DI,aop,anotaion)"};
 		
 		for(int i=0;i<myArr.length;i++){
 			myList.add(myArr[i]);
