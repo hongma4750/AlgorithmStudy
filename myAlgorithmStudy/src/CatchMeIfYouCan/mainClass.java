@@ -42,8 +42,9 @@ public class mainClass {
 			Scanner sc = new Scanner(System.in);
 			
 			if(sc.nextInt()==1){
+				int count = 1;
 				int checkPoint = (int)(Math.random()*myList.size());
-				System.out.println(myList.get(checkPoint));
+				System.out.println(myList.get(checkPoint) +" - "+count+"번"+" - "+(myList.size()-1)+" 남음");
 				myList.remove(checkPoint);
 				
 				/*for(int j=0;j<myList.size();j++){
